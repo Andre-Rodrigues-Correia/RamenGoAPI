@@ -17,7 +17,7 @@ async function verifyToken(req, res, next){
     try {
         if(token !== SECRET){
             return res.status(403).json({
-                message: 'Not Authorized'
+                message: 'x-api-key header missing'
             })
         }
 
@@ -25,7 +25,7 @@ async function verifyToken(req, res, next){
 
     }catch (error) {
         return res.status(500).json({
-            message: 'Internal server error'
+            error: 'could not place order'
         })
     }
 }

@@ -7,7 +7,6 @@ async function getOrderId(order){
             'x-api-key': API_KEY
         }
     })
-    console.log(response)
     return response.data.orderId;
 }
 

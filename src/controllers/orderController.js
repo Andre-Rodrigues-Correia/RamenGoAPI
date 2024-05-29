@@ -10,6 +10,12 @@ async function createOrder(req, res){
         const broth = getBrothById(req.body.brothId)
         const protein = getProteinById(req.body.proteinId)
 
+        if(!broth || protein ){
+            return res.status(400).json({
+                error: 'brothId or proteinId invalid'
+            });
+        }
+
         const description = `${broth.name} and ${protein.name}`
 
         return res.status(201).json({
