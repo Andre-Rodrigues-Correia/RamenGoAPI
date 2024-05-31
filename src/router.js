@@ -6,7 +6,7 @@ import {verifyToken} from "./middlewares/securityMiddleware.js";
 
 const router = Router();
 
-router.use('/order', orderRoutes);
+router.use('/orders', orderRoutes);
 router.use('/broths', brothsRoutes)
 router.use('/proteins', proteinsRoutes)
 router.all('/*', (req, res) => {
